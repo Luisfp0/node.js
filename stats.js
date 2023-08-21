@@ -8,7 +8,7 @@ setInterval( () => {
   const mem = parseInt (freemem() / 1024 / 1024) 
   const percents = parseInt((mem / total) * 100) 
   
-  const status = {
+  const stats = {
     free: `${mem}MB`,
     total: `${total}MB`,
     usage: `${percents}%`
@@ -16,8 +16,8 @@ setInterval( () => {
   
   console.clear()
   console.log("====== PC STATS ======")
-  console.table(status)
+  console.table(stats)
 
-  log('Rodando...')
+  log(`${JSON.stringify(stats)}\n`)
 
 }, 1000) 
